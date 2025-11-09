@@ -1,6 +1,8 @@
 name: "Mera pehla action workflow"
 
 on:
+  workflow_dispatch:
+    
   pull_request: 
     branches:
       - main
@@ -58,10 +60,14 @@ jobs:
   
   terraform-apply:
     runs-on: ubuntu-latest
-    if: github.ref == 'ref/heads/main'
+    # if: github.ref == 'ref/heads/main'
     needs: terraform-init-plan
     environment: Dev
     steps:
+      - name: Checkref
+        # uses: actions/checkout@v5.0.0
+        run: echo github.ref
+
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
