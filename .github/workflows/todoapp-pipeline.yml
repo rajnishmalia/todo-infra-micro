@@ -33,11 +33,11 @@ jobs:
           tenant-id: e36e2232-cac4-497a-9243-862b9b46221b
           subscription-id: 06f4c176-e41e-424a-bfc2-cb4b3a4e5fe5
       
-      - name: Terraform fmt
-        id: fmt
-        run: terraform fmt -check
-        continue-on-error: true
-        working-directory: Parent_module/Dev
+      # - name: Terraform fmt
+      #   id: fmt
+      #   run: terraform fmt -check
+      #   continue-on-error: true
+      #   working-directory: Parent_module/Dev
   
       - name: Terraform Init
         id: init
